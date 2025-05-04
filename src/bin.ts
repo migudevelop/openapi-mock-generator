@@ -7,7 +7,6 @@ import {
   mergeSchemaArray
 } from './lib/mock-generator'
 import { Logger } from './helppers/logger'
-import { cosmiconfigSync } from 'cosmiconfig'
 import { join } from 'path'
 import { loadConfig } from './helppers/config'
 
