@@ -1,8 +1,9 @@
 {
   "name": "openapi-mock-generator",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "CLI tool to generate mock data from OpenAPI specifications.",
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "type": "module",
   "scripts": {
     "build": "tsc",
@@ -12,9 +13,44 @@
   "bin": {
     "openapi-mock-generator": "./dist/bin.js"
   },
-  "keywords": [],
+  "files": [
+    "dist/**/*",
+    "LICENSE",
+    "README.MD",
+    "package.json"
+  ],
+  "keywords": [
+    "openapi-mock-generator",
+    "openapi-mock",
+    "openapi-tools",
+    "openapi-generator",
+    "openapi",
+    "mock",
+    "generator",
+    "cli",
+    "typescript",
+    "mocks",
+    "api",
+    "swagger",
+    "json",
+    "schema",
+    "faker",
+    "javascript"
+  ],
   "author": "Miguel Martínez",
   "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22.0.x",
+    "pnpm": ">=9.0.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migudevelop/openapi-mock-generator.git"
+  },
+  "homepage": "https://github.com/migudevelop/openapi-mock-generator.git",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@apidevtools/swagger-parser": "10.1.1",
     "@faker-js/faker": "9.7.0",
