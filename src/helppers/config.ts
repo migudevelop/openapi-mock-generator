@@ -1,4 +1,5 @@
 import { cosmiconfigSync } from 'cosmiconfig'
+import { Logger } from './logger'
 
 export interface Config {
   openApiFilesPath: string
@@ -14,7 +15,11 @@ export function loadConfig(): Config {
   const explorer = cosmiconfigSync('openapiMockGenerator')
   const result = explorer.search()
   if (!result || result.isEmpty) {
-    throw new Error('Configuration file not found or is empty')
+    Logger.warn('No configuration file found. Using default values.')
+    return {
+      openApiFilesPath: './openapi',
+      outputSchemasPath: './mocks/schemas'
+    } as Config
   }
   return result.config as Config
 }
