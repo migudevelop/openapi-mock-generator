@@ -22,4 +22,4 @@ jobs:
       - name: Pass eslint
         run: npm run lint
       - name: Pass tests of the application
-        run: npm run tests
+        run: npm run test
