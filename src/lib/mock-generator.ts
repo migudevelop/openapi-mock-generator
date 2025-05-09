@@ -5,6 +5,8 @@ import { isString } from '@migudevelop/types-utils'
 
 JSONSchemaFaker.extend('faker', () => faker)
 
+// Define the type for the schema generator
+//eslint-disable-next-line @typescript-eslint/no-explicit-any
 type MockCache = Record<string, any[]>
 
 /**
