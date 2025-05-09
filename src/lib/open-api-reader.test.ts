@@ -58,7 +58,7 @@ describe('open-api-reader', () => {
     })
 
     it('should return false if response is undefined', () => {
-      // @ts-ignore Ignoring the type error for testing purposes
+      // @ts-expect-error Ignoring the type error for testing purposes
       expect(containsSchema(undefined)).toBe(false)
     })
   })
@@ -105,7 +105,7 @@ describe('open-api-reader', () => {
     })
 
     it('should return true if the document is undefined', () => {
-      //@ts-ignore Ignoring the type error for testing purposes
+      //@ts-expect-error Ignoring the type error for testing purposes
       expect(containsComponentSchemas(undefined)).toBe(true)
     })
   })
@@ -156,7 +156,7 @@ describe('open-api-reader', () => {
 
     it('should return undefined if provided undefined', () => {
       expect(
-        // @ts-ignore Ignoring the type error for testing purposes
+        // @ts-expect-error Ignoring the type error for testing purposes
         getOpenApiSchema(undefined)
       ).toBeUndefined()
     })
@@ -233,7 +233,7 @@ describe('open-api-reader', () => {
         }
       }
 
-      //@ts-ignore Ignoring the type error for testing purposes
+      //@ts-expect-error Ignoring the type error for testing purposes
       const schemas = getOpenApiSchemasByResponses(responses, 'get', '/users')
 
       expect(schemas).toHaveLength(1)
@@ -251,7 +251,7 @@ describe('open-api-reader', () => {
         }
       }
 
-      //@ts-ignore Ignoring the type error for testing purposes
+      //@ts-expect-error Ignoring the type error for testing purposes
       const schemas = getOpenApiSchemasByResponses(responses, 'get', '/users')
 
       expect(schemas).toHaveLength(0)
@@ -382,7 +382,7 @@ describe('open-api-reader', () => {
         openapi: '3.0.0',
         info: { title: 'Test API', version: '1.0.0' },
         paths: {},
-        // @ts-ignore Ignoring the type error for testing purposes
+        // @ts-expect-error Ignoring the type error for testing purposes
         components: null
       }
 
@@ -434,7 +434,7 @@ describe('open-api-reader', () => {
         openapi: '3.0.0',
         info: { title: 'Test API', version: '1.0.0' },
         paths: {},
-        // @ts-ignore Ignoring the type error for testing purposes
+        // @ts-expect-error Ignoring the type error for testing purposes
         components: null
       }
 
