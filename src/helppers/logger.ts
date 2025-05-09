@@ -1,4 +1,10 @@
-import chalk from 'chalk'
+import {
+  blueBright,
+  cyanBright,
+  greenBright,
+  yellowBright,
+  redBright
+} from 'colorette'
 
 /**
  * Returns the current timestamp formatted as a string.
@@ -16,53 +22,25 @@ function getCurrentTimestamp(): string {
  * Each log message is prefixed with a timestamp and a color-coded label.
  */
 export class Logger {
-  /**
-   * Logs an informational message.
-   * @template T - The type of the message(s) to log. Defaults to `string`.
-   * @param {...T[]} message - The message(s) to log.
-   */
   static info<T = string>(...message: T[]): void {
-    this.mainLog(`${chalk.blueBright('[INFO]')} ${chalk.cyanBright(message)}`)
+    this.mainLog(`${blueBright('[INFO]')} ${cyanBright(String(message))}`)
   }
 
-  /**
-   * Logs a success message.
-   * @template T - The type of the message(s) to log. Defaults to `string`.
-   * @param {...T[]} message - The message(s) to log.
-   */
   static success<T = string>(...message: T[]): void {
-    this.mainLog(
-      `${chalk.greenBright('[SUCCESS]')} ${chalk.greenBright(message)}`
-    )
+    this.mainLog(`${greenBright('[SUCCESS]')} ${greenBright(String(message))}`)
   }
 
-  /**
-   * Logs a warning message.
-   * @template T - The type of the message(s) to log. Defaults to `string`.
-   * @param {...T[]} message - The message(s) to log.
-   */
   static warn<T = string>(...message: T[]): void {
-    this.mainLog(
-      `${chalk.yellowBright('[WARN]')} ${chalk.yellowBright(message)}`
-    )
+    this.mainLog(`${yellowBright('[WARN]')} ${yellowBright(String(message))}`)
   }
 
-  /**
-   * Logs an error message.
-   * @template T - The type of the message(s) to log. Defaults to `string`.
-   * @param {...T[]} message - The message(s) to log.
-   */
   static error<T = string>(...message: T[]): void {
-    this.mainLog(`${chalk.redBright('[ERROR]')} ${chalk.redBright(message)}`)
+    this.mainLog(`${redBright('[ERROR]')} ${redBright(String(message))}`)
   }
 
-  /**
-   * Logs a message with a timestamp. This is a private method used internally by the other logging methods.
-   * @template T - The type of the message(s) to log. Defaults to `string`.
-   * @param {...T[]} message - The message(s) to log.
-   * @private
-   */
   private static mainLog<T = string>(...message: T[]): void {
-    console.log(`${chalk.cyanBright(`[${getCurrentTimestamp()}]`)}${message}`)
+    console.log(
+      `${cyanBright(`[${getCurrentTimestamp()}]`)} ${message.join(' ')}`
+    )
   }
 }

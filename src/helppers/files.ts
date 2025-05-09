@@ -1,3 +1,4 @@
+import { isEmptyArray, isNullish } from '@migudevelop/types-utils'
 import { writeFileSync, existsSync, mkdirSync, readdirSync } from 'fs'
 import { dirname, join } from 'path'
 import { Logger } from '@/helppers/logger'
@@ -32,7 +33,7 @@ function readFilesRecursively(
   const files: string[] = []
 
   function readFolder(currentPath: string) {
-    const entries = readdirSync(currentPath, { withFileTypes: true })
+    const entries = readdirSync(currentPath, { withFileTypes: true }) || []
 
     for (const entry of entries) {
       const entryPath = join(currentPath, entry.name)
@@ -57,7 +58,8 @@ function readFilesRecursively(
  */
 export function readOpenApiFiles(folderPath: string): string[] {
   Logger.info(`Searching for OpenAPI files in folder: ${folderPath}`)
-  const openApiFiles = readFilesRecursively(folderPath, '.yaml')
+  const openApiYamlFiles = readFilesRecursively(folderPath, '.yaml')
+  const openApiYmlFiles = readFilesRecursively(folderPath, '.yml')
 
-  return openApiFiles
+  return [...openApiYamlFiles, ...openApiYmlFiles]
 }

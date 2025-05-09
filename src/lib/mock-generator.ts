@@ -41,7 +41,7 @@ export function generateSchemaMocksWithRelations(
  * @param cache - The cache of generated mock data.
  * @returns The mock object with relations applied.
  */
-function applyRelations<T extends Record<string, unknown>>(
+export function applyRelations<T extends Record<string, unknown>>(
   mock: T,
   schemas: Record<string, OpenAPIV3.SchemaObject>,
   cache: MockCache
@@ -83,7 +83,7 @@ export function mergeSchemaArray(schemaArray: OpenAPIV3.SchemaObject[]) {
 
   for (const schemaObject of schemaArray) {
     for (const [key, value] of Object.entries(schemaObject)) {
-      merged[key] = value
+      merged[key] = { ...value, ...merged[key] }
     }
   }
 

@@ -12,6 +12,5 @@
       "description": "The path to the directory where generated schemas will be saved."
     }
   },
-  "required": ["openApiFilesPath", "outputSchemasPath"],
   "additionalProperties": false
 }
