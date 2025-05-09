@@ -27,6 +27,43 @@ pnpm start
 
 3. Access the mock server at `http://localhost:3000` (default port).
 
+## Using @faker-js/faker for Mock Data
+
+The OpenAPI Mock Generator supports the use of the `@faker-js/faker` library to generate realistic mock data. You can define custom mock data in your OpenAPI specification by using `x-faker` extensions.
+
+### Example
+
+In your OpenAPI specification, add the `x-faker` extension to specify the Faker.js method for generating data:
+
+```yaml
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          x-faker: datatype.uuid
+        name:
+          type: string
+          x-faker: name.findName
+        email:
+          type: string
+          x-faker: internet.email
+```
+
+### How It Works
+
+1. The generator reads the `x-faker` extensions in your OpenAPI specification.
+2. It uses the specified Faker.js methods to generate mock data for the corresponding fields.
+3. The mock server will return the generated data when the API is called.
+
+### Faker.js Documentation
+
+For a full list of available Faker.js methods, refer to the [@faker-js/faker documentation](https://fakerjs.dev/).
+
+By leveraging `@faker-js/faker`, you can create more realistic and meaningful mock data for your APIs.
+
 ## Project Structure
 - **src/**: Contains the source code, including helpers and library modules.
   - `helppers/`: Utility functions for configuration, file handling, logging, and string manipulation.

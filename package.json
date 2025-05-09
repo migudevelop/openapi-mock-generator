@@ -36,7 +36,14 @@
     "json",
     "schema",
     "faker",
-    "javascript"
+    "javascript",
+    "json-schema-faker",
+    "json-schema",
+    "json-schema-generator",
+    "json-schema-mock",
+    "faker",
+    "faker-js",
+    "faker-js/faker"
   ],
   "author": "Miguel Martínez",
   "license": "Apache-2.0",
