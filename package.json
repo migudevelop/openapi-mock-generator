@@ -1,6 +1,6 @@
 {
   "name": "openapi-mock-generator",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "CLI tool to generate mock data from OpenAPI specifications.",
   "main": "./dist/index.js",
   "scripts": {
