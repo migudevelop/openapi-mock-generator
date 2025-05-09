@@ -25,11 +25,7 @@ export async function parseOpenApiDocument(filePath: string) {
  * @returns {boolean} True if the response contains a schema, false otherwise.
  */
 export function containsSchema(response: OpenAPIV3.ResponseObject) {
-  return (
-    response?.content &&
-    response?.content['application/json'] &&
-    response?.content['application/json'].schema
-  )
+  return !!response?.content?.['application/json']?.schema
 }
 
 /**
@@ -92,9 +88,9 @@ export function getOpenApiSchemasByResponses<
 export async function extractOpenApiSchemas(filePath: string) {
   try {
     const api = await parseOpenApiDocument(filePath)
-    if (!containsComponentSchemas(api)) {
+    if (!containsComponentSchemas(api) && !isNullish(api?.components)) {
       Logger.info('Extracting schemas from components...')
-      return api?.components?.schemas as OpenAPIV3.SchemaObject
+      return api.components.schemas as OpenAPIV3.SchemaObject
     } else {
       Logger.warn('No schemas found in components.')
     }
