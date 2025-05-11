@@ -1,8 +1,8 @@
-# OpenAPI Mock Generator
+# OpenAPI Mock Generator CLI
 ![GitHub License](https://img.shields.io/github/license/migudevelop/openapi-mock-generator)
 
 ## Overview
-OpenAPI Mock Generator is a Node.js-based tool designed to generate mock data from OpenAPI specifications. It simplifies the process of creating mock data for testing and development purposes, ensuring that developers can simulate the OpenAPI response as realistically as possible.
+OpenAPI Mock Generator CLI is a Node.js-based tool designed to generate mock data from OpenAPI specifications. It simplifies the process of creating mock data for testing and development purposes, ensuring that developers can simulate the OpenAPI response as realistically as possible.
 
 ## Features
 - **Mock Data Generation**: Automatically generate mock data based on OpenAPI schemas.
