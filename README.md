@@ -2,12 +2,10 @@
 ![GitHub License](https://img.shields.io/github/license/migudevelop/openapi-mock-generator)
 
 ## Overview
-The OpenAPI Mock Generator is a Node.js-based tool designed to generate mock data and APIs from OpenAPI specifications. It simplifies the process of creating mock servers for testing and development purposes, ensuring that developers can simulate API behavior without relying on live services.
+OpenAPI Mock Generator is a Node.js-based tool designed to generate mock data from OpenAPI specifications. It simplifies the process of creating mock data for testing and development purposes, ensuring that developers can simulate the OpenAPI response as realistically as possible.
 
 ## Features
 - **Mock Data Generation**: Automatically generate mock data based on OpenAPI schemas.
-- **Mock API Server**: Spin up a mock server to simulate API endpoints.
-- **Customizable Responses**: Configure custom responses for specific endpoints.
 - **Support for Multiple OpenAPI Versions**: Compatible with OpenAPI 2.0, 3.0, and beyond.
 
 ## Installation
@@ -18,14 +16,29 @@ pnpm install
 ```
 
 ## Usage
-1. Place your OpenAPI specification files in the `openapi/` directory.
-2. Run the following command to start the mock server:
+
+### Command Line Interface (CLI)
+1. Place your OpenAPI specification files in the `openapi/` directory or configure the path in the `openapiMockGenerator.config.json` file using the **openApiFilesPath** property. 
+   - The generator will look for OpenAPI files in the specified directory.
+   - You can also specify the mock data output directory in the configuration file using **outputSchemasPath** property. The default output directory is `mocks/`.
+2. Run the following command to generate mock data:
 
 ```bash
-pnpm start
+#npm
+npx openapi-mock-generator
+
+# pnpm
+pnpm dlx openapi-mock-generator 
 ```
 
-3. Access the mock server at `http://localhost:3000` (default port).
+### Or if you have installed in your project
+```bash
+#npm
+npm run openapi-mock-generator
+# pnpm
+pnpm openapi-mock-generator
+```
+
 
 ## Using @faker-js/faker for Mock Data
 
@@ -79,14 +92,6 @@ Run the test suite using:
 pnpm test
 ```
 
-## Contributing
-Contributions are welcome! Please follow these steps:
-1. Fork the repository.
-2. Create a new branch for your feature or bugfix.
-3. Submit a pull request with a detailed description of your changes.
-
 ## License
 This project is licensed under the Apache 2.0 License. See the `LICENSE` file for details.
 
-## Acknowledgments
-Special thanks to the open-source community for providing tools and libraries that make this project possible.
