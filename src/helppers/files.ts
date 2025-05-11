@@ -1,6 +1,6 @@
 import { writeFileSync, existsSync, mkdirSync, readdirSync } from 'fs'
 import { dirname, join } from 'path'
-import { Logger } from '@/helppers/logger'
+import { Logger } from './logger'
 
 /**
  * Writes a JSON file to the specified path. If the directory does not exist, it creates it.
