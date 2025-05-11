@@ -1,5 +1,5 @@
 # OpenAPI Mock Generator CLI
-![GitHub License](https://img.shields.io/github/license/migudevelop/openapi-mock-generator)
+![GitHub License](https://img.shields.io/github/license/migudevelop/openapi-mock-generator-cli)
 
 ## Overview
 OpenAPI Mock Generator CLI is a Node.js-based tool designed to generate mock data from OpenAPI specifications. It simplifies the process of creating mock data for testing and development purposes, ensuring that developers can simulate the OpenAPI response as realistically as possible.
@@ -25,18 +25,18 @@ pnpm install
 
 ```bash
 #npm
-npx openapi-mock-generator
+npx openapi-mock-generator-cli
 
 # pnpm
-pnpm dlx openapi-mock-generator 
+pnpm dlx openapi-mock-generator-cli 
 ```
 
 ### Or if you have installed in your project
 ```bash
 #npm
-npm run openapi-mock-generator
+npm run openapi-mock-generator-cli
 # pnpm
-pnpm openapi-mock-generator
+pnpm openapi-mock-generator-cli
 ```
 
 

@@ -15,7 +15,7 @@
     "test:coverage": "jest --coverage"
   },
   "bin": {
-    "openapi-mock-generator": "./dist/bin.js"
+    "openapi-mock-generator-cli": "./dist/bin.js"
   },
   "files": [
     "dist/**/*",
@@ -57,9 +57,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/migudevelop/openapi-mock-generator.git"
+    "url": "git+https://github.com/migudevelop/openapi-mock-generator-cli.git"
   },
-  "homepage": "https://github.com/migudevelop/openapi-mock-generator.git",
+  "homepage": "https://github.com/migudevelop/openapi-mock-generator-cli.git",
   "publishConfig": {
     "access": "public"
   },
