@@ -1,6 +1,6 @@
 import * as Reader from './open-api-reader'
 
-import { Logger } from '@/helppers/logger'
+import { Logger } from '../helppers/logger'
 import { OpenAPIV3 } from 'openapi-types'
 import SwaggerParser from '@apidevtools/swagger-parser'
 jest.mock('@apidevtools/swagger-parser')
@@ -14,7 +14,7 @@ const {
   extractOpenApiSchemas
 } = Reader
 
-jest.mock('@/helppers/logger', () => ({
+jest.mock('../helppers/logger', () => ({
   Logger: {
     success: jest.fn(),
     warn: jest.fn(),

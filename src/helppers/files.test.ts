@@ -1,10 +1,10 @@
 import { writeFile, readOpenApiFiles } from './files'
 import { existsSync, mkdirSync, writeFileSync, readdirSync, Dirent } from 'fs'
-import { Logger } from '@/helppers/logger'
+import { Logger } from './logger'
 import { join } from 'path'
 
 jest.mock('fs')
-jest.mock('@/helppers/logger')
+jest.mock('./logger')
 
 describe('files.ts', () => {
   afterEach(() => {
