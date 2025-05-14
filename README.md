@@ -8,6 +8,9 @@ OpenAPI Mock Generator CLI is a Node.js-based tool designed to generate mock dat
 - **Mock Data Generation**: Automatically generate mock data based on OpenAPI schemas.
 - **Support for Multiple OpenAPI Versions**: Compatible with OpenAPI 2.0, 3.0, and beyond.
 
+## Prerequisites
+- [Node.js](https://nodejs.org/) >= 22.x
+
 ## Installation
 To install the dependencies, use the following command:
 
@@ -15,10 +18,16 @@ To install the dependencies, use the following command:
 pnpm install
 ```
 
+Optionally, install the CLI globally:
+
+```bash
+pnpm add -g openapi-mock-generator-cli
+```
+
 ## Usage
 
 ### Command Line Interface (CLI)
-1. Place your OpenAPI specification files in the `openapi/` directory or configure the path in the `openapiMockGenerator.config.json` file using the **openApiFilesPath** property. 
+1. Place your OpenAPI specification files in the `openapi/` directory or configure the path in the `openapiMockGenerator.config.json` file using the **openApiFilesPath** property.    
    - The generator will look for OpenAPI files in the specified directory.
    - You can also specify the mock data output directory in the configuration file using **outputSchemasPath** property. The default output directory is `mocks/`.
 2. Run the following command to generate mock data:
@@ -39,6 +48,19 @@ npm run openapi-mock-generator-cli
 pnpm openapi-mock-generator-cli
 ```
 
+#### Supported Configuration File Names
+
+The CLI will automatically look for a configuration file in your project root.  
+You can use any of the following names and formats:
+
+| JSON                | YAML/YML                  | JavaScript/TypeScript      |
+|---------------------|---------------------------|----------------------------|
+| openapiMockGenerator.json           | openapiMockGenerator.yaml           | openapiMockGenerator.js           |
+| openapiMockGenerator.config.json    | openapiMockGenerator.config.yaml    | openapiMockGenerator.config.js    |
+|           | openapiMockGenerator.yml     | openapiMockGenerator.ts           |
+|                                 |  openapiMockGenerator.config.yml  | openapiMockGenerator.config.ts    |
+
+> **Tip:** This flexibility allows you to choose the format that best fits your workflow or CI/CD pipeline.
 
 ## Using @faker-js/faker for Mock Data
 
